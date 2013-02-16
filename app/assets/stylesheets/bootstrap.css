@@ -231,18 +231,18 @@ body {
   background: -webkit-gradient(radial, center center, 0, center center, 460, from(#13a1cd), to(#2F2727));
       background: -webkit-radial-gradient(circle, #13a1cd, #2F2727);
       background: -moz-radial-gradient(circle, #13a1cd, #2F2727);
-    
+
 }
 
 a {
-  color: #0088cc;
+  color: white;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #005580;
-  text-decoration: underline;
+  color: #faa732;
+
 }
 
 .img-rounded {

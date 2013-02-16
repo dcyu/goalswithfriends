@@ -14,16 +14,23 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
   <link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
+<body>
+  <div class="row">
+    <div class="span12 divider"></div>
+  </div>
+          <div class="row hoz-spacing" id="your-resolution">
+          <% @users.each do |user| %>
+    <div class="span12">
+      <div class="face-group hoz-spacing">
+          <div class="face fl"><%= link_to image_tag(user.pic_url), user_url(user.id) %>
+      <div class="name"><%= user.first_name %></div>
+    </div>
+  </div>
+</div>
+</div>
 
-<%=link_to "New User", new_user_url%>
-<ul><% @users.each do |user| %>
-<li><%= user.first_name  %>
-<%= user.last_name %><br>
-<%= user.email %><br>
-<%= link_to image_tag(user.pic_url, width:200), user_url(user.id) %></li>
-  <% if user.goals.present?%>
-    <%= user.goals.first.name%>
-    <% end %>
+
 <% end %>
-</ul>
 
+
+</body>

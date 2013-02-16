@@ -33,7 +33,7 @@
     <div class="span12">
       <div class="row">
         <div class="span3"></div>
-        <div class="sample span6">Check your friend's New Years Resolution</div>
+        <div class="sample span6"><%= link_to "Check your friend's New Years Resolution", users_url%></div>
       </div>
           <div class="face-group hoz-spacing">
                   <% @sample_user.each do |user| %>
@@ -51,7 +51,9 @@
 <div class="row">
     <div class="span3"></div>
     <div class="span6" id="login">
-<%=button_tag "Login", :class => "btn btn-large btn-warning span3"%>
+<%=button_to "Login", "/auth/facebook", :class => "btn btn-large btn-warning span3"%>
+
+
     </div>
     <div class="span3"></div>
   </div>
