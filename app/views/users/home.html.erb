@@ -1,27 +1,59 @@
-<h1>Welcome to Goals With Friends</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome to your New year Resolution</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
 
-<%= form_for(@goal) do |f| %>
+</head>
 
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+<body>
+<div class="container">
+  <div class="row" id="your-resolution">
+      <div class="span3"></div>
+      <div class="span6">
+               <h3>What is your New Year Resolution?</h3>
+               <div>
+                    <%= form_for(@goal) do |f| %>
+                        <%= f.text_field :name, placeholder: "New Year Resolution" %>
+                        <%= f.hidden_field :user_id, value: "3" %>
+                        <%= f.hidden_field :start_date, value:Date.today %>
+                        <%= f.hidden_field :end_date, value:1.year.from_now.to_date %>
+                        <%= f.hidden_field :status, value: "not started"%>
+                        <%=f.submit "Submit", class: "btn btn-warning bottom"%>
+                    <% end %>
+    </div>
+  <div class="span3"></div>
+</div>
 
-    <%= f.hidden_field :user_id, value: "3" %>
 
-    <%= f.hidden_field :start_date, value:Date.today %>
+<div class="row hoz-spacing" id="your-resolution">
+    <div class="span12">
+      <div class="row">
+        <div class="span3"></div>
+        <div class="sample span6">Check your friend's New Years Resolution</div>
+      </div>
+          <div class="face-group hoz-spacing">
+                  <% @sample_user.each do |user| %>
+                        <div class="face fl">
+                        <%= link_to image_tag(user.pic_url), user_url(user.id)%></br>
+                        <%= user.first_name.capitalize%> <%=user.last_name.capitalize%></br>
+                        <%= "Goal: #{user.goals.first.name}..."%>
+                        </div>
+                  <% end %>
+          </div>
+    </div>
+  </div>
 
-    <%= f.hidden_field :end_date, value:1.year.from_now.to_date %>
-
-    <%= f.hidden_field :status, value: "not started"%>
-
-    <%= f.submit %>
-<% end %>
-
-
-
-<% @sample_user.each do |user| %>
-<li><%= link_to image_tag(user.pic_url, width:200), user_url(user.id) %></li>
-<%= user.goals.first.name%>
-<% end %>
 <p></p>
-<%=button_tag "Login"%>
+<div class="row">
+    <div class="span3"></div>
+    <div class="span6" id="login">
+<%=button_tag "Login", :class => "btn btn-large btn-warning span3"%>
+    </div>
+    <div class="span3"></div>
+  </div>
+
 

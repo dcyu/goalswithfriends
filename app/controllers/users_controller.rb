@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         @users_goals << user
       end
     end
-   @sample_user=@users_goals.sample(3)
+   @sample_user=@users_goals.sample(4)
   end
 
   def index
