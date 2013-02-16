@@ -28,9 +28,10 @@ class GoalsController < ApplicationController
     @goal = Goal.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      # format.html {render 'user_url(@goal.user.id)'}
       format.json { render json: @goal }
     end
+
   end
 
   # GET /goals/1/edit
@@ -48,7 +49,7 @@ class GoalsController < ApplicationController
         format.html { redirect_to user_url(@goal.user.id), notice: 'Goal was successfully created.' }
         format.json { render json: @goal, status: :created, location: @goal }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to user_url(@goal.user.id), notice: 'Please enter goal name' }
         format.json { render json: @goal.errors, status: :unprocessable_entity }
       end
     end
