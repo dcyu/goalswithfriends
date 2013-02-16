@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <b>First name:</b>
@@ -18,7 +18,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit Profile', edit_user_path(@user) %>
 
 <h3>Create a new Goal</h3>
 <%= form_for(@goal) do |f| %>
@@ -44,6 +44,7 @@
 <% end %>
 
 <h3>Goals</h3>
+<p id="notice"><%= notice %></p>
 <% @user.goals.each do |goal| %>
 <%=link_to goal.name, edit_goal_url(goal.id)%>
 <%=goal.description%></br>

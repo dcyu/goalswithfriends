@@ -3,6 +3,7 @@ class GoalsController < ApplicationController
   # GET /goals.json
   def index
     @goals = Goal.all
+    @users=User.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +45,7 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        format.html { redirect_to user_url(@goal.user.id), notice: 'Goal was successfully created.' }
         format.json { render json: @goal, status: :created, location: @goal }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.update_attributes(params[:goal])
-        format.html { redirect_to @goal, notice: 'Goal was successfully updated.' }
+        format.html { redirect_to user_url(@goal.user.id), notice: 'Goal was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
