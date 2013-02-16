@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216172024) do
+ActiveRecord::Schema.define(:version => 20130216223301) do
 
   create_table "goals", :force => true do |t|
     t.string   "name"
@@ -27,10 +27,15 @@ ActiveRecord::Schema.define(:version => 20130216172024) do
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "email"
     t.string   "pic_url"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
 end

@@ -34,4 +34,9 @@ Goalswithfriends::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ENV['FACEBOOK_APP_ID'] = "518300971554498";
+  ENV['FACEBOOK_SECRET'] = "33e5e637c376ef6036851de0a4393e08";
+
 end
+

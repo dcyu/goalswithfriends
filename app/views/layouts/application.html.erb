@@ -7,10 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
-  <%=link_to "Home", home_url%>
-</nav>
-<%= yield %>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <div id="user_nav">
+    <% if current_user %>
+      Signed in as <strong><%= current_user.name %></strong>!
+      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+  </div>
+
+  <nav>
+    <%=link_to "Home", home_url%>
+  </nav>
+  <%= yield %>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 </body>
 </html>

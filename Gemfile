@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,7 +13,6 @@ group :development, :test do
   gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
 end
 
-gem 'omniauth-facebook'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,7 +28,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
