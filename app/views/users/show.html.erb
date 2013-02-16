@@ -9,6 +9,13 @@
   <b>Last name:</b>
   <%= @user.last_name %>
 </p>
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+<p>
+  <%= image_tag @user.pic_url %>
+</p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
