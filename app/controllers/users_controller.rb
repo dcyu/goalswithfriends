@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  def home
+    @users = User.all.sample(3)
+    @goal = Goal.new
+  end
   def index
     @users = User.all
 

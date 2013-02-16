@@ -1,5 +1,7 @@
 Goalswithfriends::Application.routes.draw do
-  root :to => "Users#index"
+  root :to => "Users#home"
+
+  get "/goalswithfriends" => "Users#home", :as => "home"
 
   resources :goals
 
