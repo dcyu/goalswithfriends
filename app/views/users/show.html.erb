@@ -9,14 +9,14 @@
     body{color:white;}
   </style>
 </head>
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
+
+<div class="container">
+
+  <p>
+  <b>Name:</b>
+  <%= @user.name %>
 </p>
 
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
 </p>
 <p>
   <b>Email:</b>
@@ -75,3 +75,4 @@ End Date:
 Status:
 <%=goal.status%></br>
 <%end%>
+</div>

@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+ #user_nav, nav {
+  margin-left:  50px;
+ }
 #your-resolution{
   margin-top:100px;
   color:white;

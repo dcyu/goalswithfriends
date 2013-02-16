@@ -6,20 +6,21 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <style>
-  #sign_in, #sign_out, .fb-login {color:white;}
+  #sign_in, #sign_out, .fb-login, h1 {color:white;}
   </style>
 </head>
 <body>
   <div id="user_nav">
     <% if current_user %>
-      <p class="fb-login">Signed in as <strong><%= current_user.name %></strong>!</p>
+      <p class="fb-login"><h1>Hello <%= current_user.name %>!</h1>!</p>
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
     <% else %>
     <% end %>
   </div>
 
   <nav>
-    <%=link_to "Home", home_url%>
+    <%=link_to "Home", home_url%> ||
+    <%=link_to "Users", users_url%>
   </nav>
   <%= yield %>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>

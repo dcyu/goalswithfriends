@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
   <link rel="stylesheet" type="text/css" href="css/main.css"/>
-
+<style>
+  .bottom{margin-bottom: 10px;}
+</style>
 </head>
 
 <body>
@@ -22,7 +24,7 @@
                         <%= f.hidden_field :start_date, value:Date.today %>
                         <%= f.hidden_field :end_date, value:1.year.from_now.to_date %>
                         <%= f.hidden_field :status, value: "not started"%>
-                        <%=f.submit "Submit", class: "btn btn-warning bottom"%>
+                        <%=f.submit "Submit", class: "btn btn-warning bottom" %>
                     <% end %>
     </div>
   <div class="span3"></div>
@@ -38,9 +40,9 @@
           <div class="face-group hoz-spacing">
                   <% @sample_user.each do |user| %>
                         <div class="face fl">
-                        <%= link_to image_tag(user.pic_url), user_url(user.id)%></br>
-                        <%= user.first_name.capitalize%> <%=user.last_name.capitalize%></br>
-                        <%= "Goal: #{user.goals.first.name}..."%>
+                        <%= image_tag(user.pic_url) %></br>
+                        <%= user.name %></br>
+                        <%= "#{user.goals.first.name}..."%>
                         </div>
                   <% end %>
           </div>
