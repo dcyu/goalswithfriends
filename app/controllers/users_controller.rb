@@ -2,9 +2,18 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def home
-    @users = User.all.sample(3)
     @goal = Goal.new
+    @users_goals=[]
+    @sample_users=[]
+    @users = User.all
+    @users.each do |user|
+      if user.goals.present?
+        @users_goals << user
+      end
+    end
+   @sample_user=@users_goals.sample(3)
   end
+
   def index
     @users = User.all
 

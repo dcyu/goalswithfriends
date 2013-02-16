@@ -18,8 +18,7 @@
 
 
 
-
-<ul><% @users.each do |user| %>
+<% @sample_user.each do |user| %>
 <li><%= link_to image_tag(user.pic_url, width:200), user_url(user.id) %></li>
 <%= user.goals.first.name%>
 <% end %>
