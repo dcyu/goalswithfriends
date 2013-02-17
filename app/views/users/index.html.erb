@@ -18,16 +18,19 @@
   </style>
 </head>
 <body>
-          <div class="row hoz-spacing" id="your-resolution">
-          <% @users.each do |user| %>
-    <div class="span12">
-      <div class="face-group hoz-spacing">
+  <div id="spacing">
+    <div class="row hoz-spacing" id="your-resolution">
+      <% @users.each do |user| %>
+      <div class="span12">
+        <div class="face-group hoz-spacing">
           <div class="face fl"><%= link_to image_tag(user.pic_url), user_url(user.id) %>
-      <div class="name"><%= user.name %></div>
+            <div class="name"><%= user.name %></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
 
 
 <% end %>

@@ -12,24 +12,28 @@
 
 <div class="container">
 
-  <p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+<div class="wrapper">
 
-</p>
-<p>
-  <b>Email:</b>
+<div class="left">  
+<h3>
+  <%= @user.name %>
+</h3>
+
+
+<h4 class="email">
   <%= @user.email %>
-</p>
-<p>
+</h4>
+<h4>
   <%= image_tag @user.pic_url, width:200 %>
-</p>
+</h4>
 
 
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
+</div>
 
-<h3>Create a new Goal</h3>
+<div class="right">
+
+<h3 class="create-goal">Create a new Goal</h3>
 <p id="notice"><%= notice %></p>
 <%= form_for(@goal) do |f| %>
  <% if @goal.errors.any? %>
@@ -47,7 +51,7 @@
     <%= f.label :name %>
     <%= f.text_field :name %></br>
 
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_area :description %></br>
 
     <%= f.hidden_field :user_id, value: @user.id %>
@@ -64,15 +68,17 @@
     <%= f.submit %>
 <% end %>
 
-<h3>Goals</h3>
+<h2 class="previous-goals">Previous Goals</h2>
 <% @user.goals.each do |goal| %>
-<%=link_to goal.name, edit_goal_url(goal.id)%>
-<%=goal.description%></br>
-Start Date:
-<%=goal.start_date%> ||
-End Date:
-<%=goal.end_date%></br>
-Status:
-<%=goal.status%></br>
+<h3><%=link_to goal.name, edit_goal_url(goal.id)%></h3>
+<h5><%=goal.description%></h5></br>
+<p>Start Date:
+<%=goal.start_date%> ||</p>
+<p>End Date:
+<%=goal.end_date%></br></p>
+<p class="status">Status:
+<%=goal.status%></br></p>
 <%end%>
+</div>
+</div>
 </div>

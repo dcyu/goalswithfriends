@@ -12,7 +12,7 @@
 <body>
   <div id="user_nav">
     <% if current_user %>
-      <p class="fb-login"><h1>Hello <%= current_user.name %>!</h1>!</p>
+      <p class="fb-login"><h1 id="welcome">Hello <%= current_user.name %>!</h1></p>
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
     <% else %>
     <% end %>
