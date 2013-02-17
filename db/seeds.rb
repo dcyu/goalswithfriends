@@ -11,6 +11,8 @@ users = [
   {:name => "Arif Poonawala", :email => "arif.poonawala@gmail.com", :pic_url => "http://m3.licdn.com/mpr/pub/image-OSKq7rafiGdRqX-rEcrI8kD9yjQj33HvOjrQndsryi9H2bTfOSKQ2EBfy9Sy2hx3gnD_/arif-poonawala.jpg"},
 {name: "Dillon Murphy", email: "gdillonmurphy@gmail.com", pic_url: "https://lh4.googleusercontent.com/-WnsNfohi1YA/AAAAAAAAAAI/AAAAAAAAHUM/5VQB6LI6Gxc/s250-c-k/photo.jpg"},
 {name: "Celine Ui", email: "celine.ui@gmail.com", pic_url: "http://profile.ak.fbcdn.net/hprofile-ak-ash4/c127.37.466.466/s160x160/294173_10100566571572928_697166679_n.jpg"}
+{name: "Daniel Yu", email: "daniel.yu@gmail.com", pic_url: "http://portal.starterleague.com/assets/daniel-yu-83cd35c04ffd80bc68dd26e5bcc47ff5.jpg"}
+{name: "Namkyu Ryoo", email: "namkyu@gmail.com", pic_url: "http://portal.starterleague.com/assets/namkyu-ryoo-7356bde88c7b20e511a6520a2a54e5ef.jpg"}
 ]
 
 users.each do |user|
